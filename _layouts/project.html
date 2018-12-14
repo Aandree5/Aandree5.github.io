@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+
+  {% include header.html %}
+
+  <body>
+
+    {% include navigation.html %}
+
+    <div class="pj-content">
+      <div class="pj-header">
+          <img class="pj-image" src="/assets/images/{{ page.title }}.png" />
+          <h1 class="pj-header-title">{{ page.title }}</h1>
+      </div>
+      
+      <div class="pj-project-info">
+          <div class="pj-project-details">
+            {% if page.githubLink %}
+              <a href="{{ page.githubLink }}">
+                <svg viewBox="0 0 50 50">
+                  <path d="{{ site.logos['GitHub'] }}"></path>
+                </svg>
+                
+                View on GitHub
+              </a>
+            {% endif %}
+            <div>
+              <svg viewBox="0 0 50 50">
+                <path d="m47 6.67v40.3h-44v-40.3h5.5v1.8c0 2.02 1.64 3.67 3.67 3.67 2.02 0 3.67-1.64 3.67-3.67v-1.83h18.3v1.83c0 2.02 1.64 3.67 3.67 3.67 2.1 0 3.7-1.7 3.7-3.7v-1.83h5.5zm-3.67 11h-36.7v25.7h36.7v-25.7zm-3.6-12.9c0-1.01-0.9-1.83-1.9-1.83s-1.8 0.82-1.8 1.83v3.67c0 1.01 0.82 1.83 1.83 1.83s1.83-0.821 1.83-1.83v-3.67zm-25.7 3.67c0 1.01-0.82 1.83-1.83 1.83s-1.83-0.821-1.83-1.83v-3.67c0-1.01 0.9-1.83 1.9-1.83s1.8 0.82 1.8 1.83v3.67zm1.83 21.5 1.57-1.45c1.83 0.887 3 1.56 5.06 3.03 3.87-4.4 6.44-6.63 11.2-9.59l0.512 1.17c-3.93 3.43-6.8 7.24-10.9 14.7-2.55-3.01-4.26-4.92-7.39-7.83z"></path>
+              </svg>  
+              <p>{{ page.date | date: "%Y" }}</p>
+            </div>
+          </div>
+          {% if page.categories %}
+          <div class="pj-project-categories">
+            {% for category in page.categories %}
+            {% include logo-name.html logo=category %}
+            {% endfor %}
+          </div>
+          {% endif %}
+      </div>
+
+      {{ content }}
+
+    </div>
+
+  </body>
+
+  {% include footer.html %}
+
+</html>

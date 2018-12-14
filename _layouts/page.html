@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+
+  {% include header.html %}
+
+  <body>
+
+    {% include navigation.html %}
+
+    <div class="pg-content">
+      <div class="pg-header">
+          <img class="pg-image" src="/assets/images/{{ page.title }}.png" />
+          <h1 class="pg-header-title">{{ page.title }}</h1>
+      </div>
+
+      {{ content }}
+
+    </div>
+
+  </body>
+
+  {% include footer.html %}
+
+</html>

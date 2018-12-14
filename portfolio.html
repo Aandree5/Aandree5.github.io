@@ -1,0 +1,29 @@
+---
+title: Portfolio
+---
+
+<div class="pf-container">
+  {% for post in site.posts %}
+  <a href="{{ post.url | relative_url  }}">
+    <img src="/assets/images/{{ post.title }}.png" />
+
+    <div class="pf-project-info">
+      <h2>{{ post.title }}</h2>
+
+      <div class="pf-project-details">
+        {{ post.excerpt }}
+
+        {% if post.categories %}
+        <div class="pf-project-categories">
+          {% for category in post.categories %}
+          <svg viewBox="0 0 50 50">
+              <path d="{{ site.logos[category] }}"></path>
+          </svg> 
+          {% endfor %}
+        </div>
+        {% endif %}
+      </div>
+    </div>
+  </a>
+  {% endfor %}
+</div>

@@ -1,3 +1,623 @@
-.nav-current {
-    color: green;
+$mainBlue: #2081d1;
+$lightBlue: #5aa1db;
+
+$codeBackground: #fbfbfb;
+$codeTextColor: #5d5d5d;
+
+$socialIconColor: #d8d8d8;
+
+@font-face {
+    font-family: 'Quicksand';
+    src: url('/assets/fonts/Quicksand-Light.ttf') format('truetype');
+    font-weight: 300;
+}
+ 
+@font-face {
+     font-family: 'Quicksand';
+     src: url('/assets/fonts/Quicksand-Regular.ttf') format('truetype');
+     font-weight: 500;
+}
+
+@font-face {
+    font-family: 'Quicksand';
+    src: url('/assets/fonts/Quicksand-Bold.ttf') format('truetype');
+    font-weight: 700;
+}
+ 
+@font-face {
+     font-family: 'AnonymousPro';
+     src: url('/assets/fonts/AnonymousPro-Regular.ttf') format('truetype');
+     font-weight: 500;
+     font-style: normal;
+}
+ 
+@font-face {
+     font-family: 'AnonymousPro';
+     src: url('/assets/fonts/AnonymousPro-Italic.ttf') format('truetype');
+     font-weight: 500;
+     font-style: italic;
+}
+
+@font-face {
+    font-family: 'AnonymousPro';
+    src: url('/assets/fonts/AnonymousPro-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+ 
+@font-face {
+     font-family: 'AnonymousPro';
+     src: url('/assets/fonts/AnonymousPro-BoldItalic.ttf') format('truetype');
+     font-weight: 700;
+     font-style: italic;
+}
+
+body {
+    background-image: url('/assets/images/HexagonPattern.png');
+    background-repeat: repeat;
+    font-family: 'Quicksand';
+    font-weight: 500;
+    line-height: 160%;
+    font-size: 14px;
+    color: $codeTextColor;
+    margin: 0;
+}
+
+h1 {
+    font-weight: 300;
+    font-size: 3em;
+}
+
+h3 {
+    font-weight: 300;
+    font-size: 1.5em;
+}
+
+button:focus {
+    background-color: #1d73b9 !important;
+}
+
+code {
+    white-space: pre-wrap;
+    display: inline-block;
+    background-color: $codeBackground;
+    padding: 3px 15px;
+    border-radius: 8px;
+    box-shadow: inset 0 -1px 0px 0px white, inset 0 0 2px 0px rgba(0, 0, 0, 0.5), inset 0 0 5px rgba(0, 0, 0, 0.2);
+    color: $codeTextColor;
+    font-family: 'AnonymousPro';
+    font-size: .9em;
+    text-align: left;
+}
+
+a:visited,
+a {
+    text-decoration: none;
+    color: $codeTextColor;
+    transition: .2s ease-in-out;
+}
+
+a:hover {
+    text-decoration: none;
+    color: $mainBlue;
+}
+
+// FOOTER
+.footer {
+    background-color: #ffffff;   
+     padding: 20px;
+    margin-top: 100px;
+}
+
+.footer p {
+    text-align: center;
+    font-size: 0.8em;
+}
+
+// NAVIGATION
+.navigation {
+    position: fixed;
+    text-align: center;
+    padding: 10px 0;
+    background-color: #ffffff;
+    border: 5px solid $mainBlue;
+    border-top: 0;
+    border-left: 0;
+    border-bottom: 0;
+    border-radius: 10px;
+    margin-left: 40px;
+}
+
+.nav-item {
+    display: block;
+    padding: 8px 35px;
+    font-size: 1.1em;
+    margin: 0;
+    border-radius: 10px 0 0 10px;
+}
+
+.nav-item:hover,
+.nav-item-current {
+    color: #ffffff !important;
+    background-color: $mainBlue;
+    box-shadow: inset -3px 0px 0px 0px $mainBlue, inset 3px 0 8px 0px rgba(0, 0, 0, 0.2);
+}
+
+.navigation nav:hover .nav-item-current:not(:hover) {
+    color: $codeTextColor !important;
+    background-color: white;
+    box-shadow: none;
+}
+
+
+// FRONT PAGE
+.fp-content {
+    text-align: center;
+    background-color: #ffffff;
+    border: 5px solid $mainBlue;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 0;
+    border-radius: 10px;
+    padding: 20px;
+    width: 50%;
+    margin: auto;
+    margin-top: 100px;
+}
+
+.fp-author-img {    
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    object-fit: cover;
+    border: 1px solid $mainBlue;
+    padding: 3px;
+    margin-top: -90px;
+}
+
+.accounts-container {
+    text-align: right;
+    margin-bottom: 0;
+    margin-top: 50px;
+    padding: 5px;
+}
+
+.account-img {
+    width: 30px;
+    height: 30px;
+    color: $socialIconColor;
+}
+
+.account-img path {
+    fill: currentColor;
+    transition: .2s ease-in-out;
+}
+
+// PAGE
+.pg-content {
+    text-align: justify;
+    background-color: #ffffff;
+    border: 5px solid $mainBlue;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 0;
+    border-radius: 10px;
+    padding: 50px;
+    width: 50%;
+    margin: auto;
+    margin-top: 100px;
+}
+
+.pg-header {
+    position: relative;    
+    width: 115%;
+    height: 250px;
+    margin-left: -50px;
+    margin-top: -50px;
+    margin-bottom: 40px;
+}
+
+.pg-header-title {    
+    position: absolute;
+    top: 150px;
+    margin: 0;
+}
+
+.pg-header-title {
+    padding: 20px 25px;
+    background-color: $mainBlue;
+    color: #ffffff;
+    border-radius: 0 10px 10px 0;
+    box-shadow: inset 5px 0px 0px 0px $mainBlue, inset -5px 0 8px 0px rgba(0, 0, 0, 0.2);
+    width: fit-content;
+}
+
+.pg-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 6px 6px 0 0;
+    object-position: 0 -100px;
+}
+
+
+// TITLE
+.title h1 {
+    margin: 60px 0 20px -35px;
+}
+
+.title h1::before {
+    content: "</";
+    color: $mainBlue;
+    opacity: .2;
+}
+
+.title h1::after {
+    content: ">";
+    color: $mainBlue;
+    opacity: .2;
+}
+
+.title hr {
+    opacity: .2;
+}
+
+// ABOUT
+.about-skills {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-skills > div {
+    margin: 0 30px;   
+    background-color: $codeBackground;
+    padding: 10px 25px;
+    border-radius: 8px;
+    box-shadow: inset 0 -1px 0px 0px white, inset 0 1px 5px 0px rgba(0, 0, 0, 0.5), inset 0 0 10px rgba(0, 0, 0, 0.2);;
+    color: $codeTextColor;
+    font-family: 'AnonymousPro';
+    font-size: .8em;
+    letter-spacing: .1em;
+}
+
+.about-skills > div p {
+    margin: 5px 0 0 0;
+}
+
+.about-skills > div > p {
+    border-top: 1px solid $mainBlue;
+}
+
+.about-icons {
+    display: flex;
+}
+
+.contact-form div {
+    display: flex;
+    width: 100%;
+    flex-flow: row-reverse;
+}
+
+.contact-form div:first-child {
+    flex-flow: row;
+}
+
+.contact-form textarea,
+.contact-form input {
+    padding: 15px;
+    width: 100%;
+    font-family: 'AnonymousPro';
+    font-size: 1.2em;
+    letter-spacing: .1em;
+    color: $codeTextColor;
+    margin: 10px;
+    background-color: $codeBackground;
+    border-radius: 8px;
+    color: $codeTextColor;
+    border: 1px solid $mainBlue;
+}
+
+.contact-form textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.contact-form button {
+    padding: 10px 30px;
+    font-family: 'AnonymousPro';
+    font-size: 1.2em;
+    letter-spacing: .1em;
+    color: #ffffff;
+    margin: 10px;
+    background-color: $mainBlue;
+    border-radius: 8px;
+    border: none;
+}
+
+.contact-form button:hover {
+    background-color: $lightBlue;
+    box-shadow: inset 0 -1px 0px 0px white, inset 0 1px 5px 0px rgba(0, 0, 0, 0.5), inset 0 0 10px rgba(0, 0, 0, 0.2);;
+}
+
+.contact-form-info {
+    display: none;
+}
+
+.contact-form-successful {
+    color: #035aa0;
+    font-size: 1.5em;
+    padding: 20px;
+    text-align: center;
+}
+
+.contact-form-failed {
+    color: #c10000;
+    font-size: 1.2em;
+    font-weight: 700;
+    width: 100%;
+    text-align: left;
+    align-self: center;
+    margin: 10px;
+}
+
+
+// LOGO NAME
+.logo-name-container {
+    position: relative;
+    height: 50px;
+}
+
+.logo-name-container:hover .logo-name-svg {
+    opacity: .05;
+}
+
+.logo-name-container:hover .logo-name-overlay {
+    opacity: 1;
+}
+
+.logo-name-svg {
+    width: 50px;
+    height: 50px;
+    padding: 8px;
+    opacity: 1;
+    box-sizing: border-box;
+    transition: .2s ease-in-out;
+}
+
+.logo-name-svg path {
+    fill: $codeTextColor;
+}
+
+.logo-name-overlay {
+    position: absolute;    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    transition: .2s ease-in-out;
+}
+
+.logo-name-text {
+    text-align: center;    
+    color: $codeTextColor;
+    font-family: 'AnonymousPro';
+    font-size: 1.1em;
+    font-weight: 700;
+    letter-spacing: .1em;
+    word-break: break-all;
+    line-height: 100%;
+}
+
+
+// PORTFOLIO
+.pf-container {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+}
+
+.pf-container > a {
+    position: relative;
+    width: 47%;
+    height: 180px;
+    margin: 10px;
+    background-color: #2081d1d1;
+    border-radius: 10px;
+}
+
+.pf-container > a > img {
+    width: 100%;
+    height: 100%;
+    opacity: .1;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+
+.pf-container > a:hover {
+    background-color: $codeBackground;
+    box-shadow: inset 0 -1px 0px 0px white, inset 0 1px 5px 0px rgba(0, 0, 0, 0.5), inset 0 0 10px rgba(0, 0, 0, 0.2);;
+
+}
+
+.pf-project-info {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.pf-project-info h2 {
+    position: absolute;
+    margin: auto;
+    color: #ffffff;
+    width: 100%;
+    text-align: center;
+    top: 50%;
+    transform: translate(0, -50%);
+    transition: .2s ease-in-out;
+}
+
+.pf-container > a:hover h2 {
+    opacity: 0;
+}
+
+.pf-project-details {
+    width: 100%;
+    height: 100%;
+}
+
+.pf-project-details > p:first-child {
+    height: 60%;
+    box-sizing: border-box;
+    padding: 10px;
+    opacity: 0;
+}
+
+.pf-container > a:hover .pf-project-details > p:first-child {
+    opacity: 1;
+}
+
+.pf-container > a:hover > img {
+    opacity: .05;
+}
+
+.pf-project-details p {
+    margin: 0;
+    text-align: center;
+    transition: .2s ease-in-out;
+}
+
+.pf-project-categories {
+    display: flex;
+    flex-flow: row;
+    width: 100%;
+    height: 50px;
+    justify-content: center;
+}
+
+.pf-project-categories svg {
+    height: 100%;
+    fill: white;
+    opacity: .2;
+    margin: 0 5px;
+    transition: .2s ease-in-out;
+}
+
+.pf-container > a:hover .pf-project-categories svg {
+    opacity: 1;
+    fill: $codeTextColor;
+}
+
+
+// PROJECT
+.pj-content {
+    text-align: justify;
+    background-color: #ffffff;
+    border: 5px solid $mainBlue;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 0;
+    border-radius: 10px;
+    padding: 50px;
+    width: 50%;
+    margin: auto;
+    margin-top: 100px;
+}
+
+.pj-header {
+    position: relative; 
+    height: 150px;   
+    width: 115%;
+    margin-left: -50px;
+    margin-top: -50px;
+    margin-bottom: 40px;
+}
+
+.pj-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 6px 6px 0 0;
+}
+
+.pj-header-title {   
+    position: absolute; 
+    margin: 0;
+    top: 75px;
+}
+
+.pj-header-title {
+    padding: 20px 25px;
+    background-color: $mainBlue;
+    color: #ffffff;
+    border-radius: 0 10px 10px 0;
+    box-shadow: inset 5px 0px 0px 0px $mainBlue, inset -5px 0 8px 0px rgba(0, 0, 0, 0.2);
+    width: fit-content;
+}
+
+.pj-project-info {
+    display: flex;
+    align-items: center;
+    margin-top: -40px;
+    margin-bottom: 30px;
+}
+
+.pj-project-details {
+    display: flex;
+    width: 50%;
+    align-items: center;
+}
+
+.pj-project-details p {
+    margin: 0;
+}
+
+.pj-project-details > a {    
+    padding: 5px 30px;
+    border: solid 1px #6e5494;
+    border-radius: 10px;
+    color: #6e5494;
+    display: flex;
+}
+
+.pj-project-details > a > svg path { 
+    fill: currentColor;
+}
+
+.pj-project-details > a:hover {
+    color: #ffffff;
+    background-color: #6e5494d9;
+}
+
+.pj-project-details > div {
+    display: flex;
+}
+
+.pj-project-details > div {
+    margin-left: 20px;
+}
+
+.pj-project-details svg {
+    height: 20px;
+    width: 20px;
+    margin-right: 5px;
+}
+
+.pj-project-details svg path {
+    fill: $codeTextColor;
+}
+
+.pj-project-categories {
+    display: flex;
+    flex-flow: row;
+    width: 50%;
+    justify-content: flex-end;
+    box-sizing: border-box;
+    font-size: .8em;
 }

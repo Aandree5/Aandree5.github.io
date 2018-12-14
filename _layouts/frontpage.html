@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+
+        {% include header.html %}
+
+    <body>
+
+        {% include navigation.html %}
+
+        <div class="fp-content">
+            <img class="fp-author-img" src="assets/images/Author.jpg"/>
+
+            {{ content }}
+            
+            {% if site.accounts %}
+            <p class="accounts-container">
+                {% for item in site.accounts %}
+                <a href="{{ item.link }}">
+                    <svg viewBox="0 0 50 50" class="account-img" 
+                    onMouseOver="this.style.color='{{ item.color }}'; changeText('{{ item.name }}')" 
+                    onMouseOut="this.style.color='#d8d8d8'; changeText('Programmer')">
+                        <path d="{{ site.logos[item.name] }}"/>
+                    </svg>
+                </a>
+                {% endfor %}
+            </p>
+            {% endif %}
+        </div>
+  
+    </body>
+
+    <script>
+        function changeText(text){
+            text = (text == "Programmer" ? "a " : "on ") + "<code>" + text + "</code>";
+
+            document.getElementById("changingText").innerHTML = text;
+        }
+    </script>
+</html>
