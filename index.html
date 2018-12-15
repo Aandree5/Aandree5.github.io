@@ -1,8 +1,46 @@
 ---
-layout: frontpage
-title: Home
+layout: NoLayout
 ---
-<h1>Hi!</h1>
-<h3>I'm <b>André Silva</b>, <span id="changingText">a <code style="padding: 10px 25px;">Programmer</code></span>.</h3>
 
-<p style="font-size: 1.2em;">Passion for coding, focused on efficiency and usability. Always looking to acheive the best. Always learning.</p>
+<!doctype html>
+<html>
+
+        {% include header.html %}
+
+    <body>
+
+        {% include navigation.html %}
+
+        <div class="fp-content">
+            <img class="fp-author-img" src="assets/images/Author.jpg"/>
+
+            <h1>Hi!</h1>
+            <h3>I'm <b>André Silva</b>, <span id="changingText">a <code style="padding: 10px 25px;">Programmer</code></span>.</h3>
+
+            <p style="font-size: 1.2em;">Passion for coding, focused on efficiency and usability. Always looking to acheive the best. Always learning.</p>
+            
+            {% if site.accounts %}
+            <p class="accounts-container">
+                {% for item in site.accounts %}
+                <a href="{{ item.link }}" target="_blank">
+                    <svg viewBox="0 0 50 50" class="account-img" 
+                    onMouseOver="this.style.color='{{ item.color }}'; changeText('{{ item.name }}')" 
+                    onMouseOut="this.style.color='#d8d8d8'; changeText('Programmer')">
+                        <path d="{{ site.logos[item.name] }}"/>
+                    </svg>
+                </a>
+                {% endfor %}
+            </p>
+            {% endif %}
+        </div>
+  
+    </body>
+
+    <script>
+        function changeText(text){
+            text = (text == "Programmer" ? "a " : "on ") + "<code style='padding: 10px 25px;'>" + text + "</code>";
+
+            document.getElementById("changingText").innerHTML = text;
+        }
+    </script>
+</html>
