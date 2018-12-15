@@ -5,7 +5,7 @@ title: Portfolio
 <div class="pf-container">
   {% for post in site.posts %}
   <a href="{{ post.url | relative_url  }}">
-    <img src="/assets/images/{{ post.title }}.png" />
+    <img src="/assets/images/{{ post.title | replace: " " ""  }}.png" />
 
     <div class="pf-project-info">
       <h2>{{ post.title }}</h2>
