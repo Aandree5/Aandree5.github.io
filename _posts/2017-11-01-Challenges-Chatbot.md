@@ -1,5 +1,6 @@
 ---
-githubLink: https://github.com/Aandree5/ChatBotJeff
+title: Challenges Chatbot
+githubLink: https://github.com/Aandree5/Chatbot-Jeff
 categories: ["Python", "GitHub"]
 ---
 
