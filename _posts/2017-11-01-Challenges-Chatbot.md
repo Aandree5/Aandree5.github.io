@@ -2,9 +2,10 @@
 title: Challenges Chatbot
 githubLink: https://github.com/Aandree5/Chatbot-Jeff
 categories: ["Python", "GitHub"]
+organization: "Coventry Univeristy"
 ---
 
-A basic chatbot, in python, round the concept of a ‘pub quiz chatbot’. Able to ask question to the user and tell him fun facts, whilst able to maintaining a casual conversation.
+A basic chatbot, in python, round the concept of a ‘pub quiz chatbot’. Can ask question to the user and tell him fun facts, whilst able of maintaining a casual conversation.
 
 
 {% include title.html title="Netwrok" %}
@@ -38,3 +39,13 @@ With all that information the chatbot can build single or multiple question to c
 
 {% include title.html title="Reflection" %}
 It was a group work, so not everything was done by me, but the things that I done, although they work, they are not as efficient as they could be, some things would be done differently to improve performance and quality.
+
+
+
+{% include title.html title="Screenshots" %}
+{% include enlarge-image.html imageLink="/assets/images/Chatbot.png" %}
+{% include enlarge-image.html imageLink="/assets/images/What-is-pizza-exemple.png" %}
+{% include enlarge-image.html imageLink="/assets/images/FunFact.png" %}
+{% include enlarge-image.html imageLink="/assets/images/History-Challenge.png" %}
+{% include enlarge-image.html imageLink="/assets/images/Question-Challenge.png" %}
+{% include enlarge-image.html imageLink="/assets/images/Quiz-Challenge.png" %}
