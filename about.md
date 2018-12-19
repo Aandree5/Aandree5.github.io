@@ -36,7 +36,7 @@ I’ve decide to come to England to take my BSc in Computer Science at Coventry 
 <p id="contact-form-successful" class="contact-form-info contact-form-successful">Thank you for contacting me.</p>
 
 
-
+<!-- Contact form -->
 <form id="contact-form" class="contact-form">
   <div>
         <input type="text" id="name" placeholder="Name" name="entry.1606674600" required>
@@ -51,6 +51,7 @@ I’ve decide to come to England to take my BSc in Computer Science at Coventry 
   </div>
 </form>
 
+<!-- Send to google forms -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script>
 $('#contact-form').submit(function(e) {

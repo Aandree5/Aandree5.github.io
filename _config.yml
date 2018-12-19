@@ -44,3 +44,5 @@ plugins:
 - jekyll-sitemap
 
 repository: aandree5/aandree5.github.io
+
+highlighter: rouge

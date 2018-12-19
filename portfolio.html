@@ -3,14 +3,18 @@ title: Portfolio
 ---
 
 <div class="pf-container">
+
+  <!-- List projects -->
   {% for post in site.posts %}
   <a href="{{ post.url | relative_url  }}">
-    <img src="/assets/images/{{ post.title | replace: " " ""  }}.png" />
+    <img src="/assets/images/PH_{{ post.title | replace: ' ', ''  }}.png" />
 
     <div class="pf-project-info">
+      <!-- Card front -->
       <p>{{ post.organization }}</p>
       <h2>{{ post.title }}</h2>
 
+      <!-- Card back -->
       <div class="pf-project-details">
         {{ post.excerpt }}
 
@@ -27,4 +31,5 @@ title: Portfolio
     </div>
   </a>
   {% endfor %}
+
 </div>

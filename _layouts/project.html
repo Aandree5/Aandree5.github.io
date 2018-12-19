@@ -8,12 +8,17 @@
     {% include navigation.html %}
 
     <div class="pj-content">
+
+      <!-- Project header -->
       <div class="pj-header">
-          <img class="pj-image" src="/assets/images/{{ page.title | replace: " " "" }}.png" />
+          <img class="pj-image" src="/assets/images/PH_{{ page.title | replace: ' ', '' }}.png" />
           <h1 class="pj-header-title">{{ page.title }}</h1>
       </div>
       
+      <!-- Project Info -->
       <div class="pj-project-info">
+
+        <!-- GitHub link and year -->
           <div class="pj-project-details">
             {% if page.githubLink %}
               <a href="{{ page.githubLink }}" target="_blank">
@@ -31,6 +36,8 @@
               <p>{{ page.date | date: "%Y" }}</p>
             </div>
           </div>
+
+          <!-- Categories -->
           {% if page.categories %}
           <div class="pj-project-categories">
             {% for category in page.categories %}
@@ -40,10 +47,26 @@
           {% endif %}
       </div>
 
+      <!-- Project content -->
       {{ content }}
 
+
+      <!-- Screenshots for projects -->
+      {% assign projectFilesStart = "PS_" | append: page.title | replace: ' ', '' | append: "_" %}
+      {% for file in site.static_files %}
+          {% if file.basename contains projectFilesStart %}
+            {% if has_title == nil %}
+            {% include title.html title="Screenshots" %}
+            {% assign has_title = true %}
+            {% endif %}
+            
+            <img class="project-screenshot" src="{{ file.path }}" onclick="this.classList.toggle('project-screenshot'); this.classList.toggle('project-screenshot-fullscreen');">
+          {% endif %}
+      {% endfor %}
     </div>
 
+
+    <!-- Back to portfolio -->
     <div class="pj-back-portfolio">
         <a href="/portfolio.html">
           <svg viewBox="0 0 50 50">
