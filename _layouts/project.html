@@ -54,7 +54,7 @@
       <!-- Screenshots for projects -->      
       {% assign projectFilesStart = "PS_" | append: page.title | replace: ' ', '' | append: "_" %}
       {% for file in site.static_files %}
-      
+
           {% if file.basename contains projectFilesStart %}
           <!-- Add title and container if at least one image exists -->
             {% if has_title == nil %}
@@ -67,7 +67,11 @@
             onclick="this.classList.toggle('project-screenshot');
             this.classList.toggle('project-screenshot-placeholder');
             this.children[0].classList.toggle('project-screenshot-fullscreen');">
-                <img src="{{ file.path }}" >
+                {% if file.extname contains "mp4" %}
+                <video src="{{ file.path }}" autoplay loop preload="metadata" muted/>
+                {% else %}
+                <img src="{{ file.path }}" />
+                {% endif %}
             </div>
           {% endif %}
       {% endfor %}
