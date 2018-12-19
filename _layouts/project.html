@@ -51,18 +51,32 @@
       {{ content }}
 
 
-      <!-- Screenshots for projects -->
+      <!-- Screenshots for projects -->      
       {% assign projectFilesStart = "PS_" | append: page.title | replace: ' ', '' | append: "_" %}
       {% for file in site.static_files %}
+      
           {% if file.basename contains projectFilesStart %}
+          <!-- Add title and container if at least one image exists -->
             {% if has_title == nil %}
             {% include title.html title="Screenshots" %}
+            <div style="text-align: center;">
             {% assign has_title = true %}
             {% endif %}
             
-            <img class="project-screenshot" src="{{ file.path }}" onclick="this.classList.toggle('project-screenshot'); this.classList.toggle('project-screenshot-fullscreen');">
+            <div class="project-screenshot"
+            onclick="this.classList.toggle('project-screenshot');
+            this.classList.toggle('project-screenshot-placeholder');
+            this.children[0].classList.toggle('project-screenshot-fullscreen');">
+                <img src="{{ file.path }}" >
+            </div>
           {% endif %}
       {% endfor %}
+      
+      
+      {% if has_title == true %}
+      <!-- Close container if was open -->
+      </div>
+      {% endif %}
     </div>
 
 
