@@ -56,22 +56,33 @@
       {% for file in site.static_files %}
 
           {% if file.basename contains projectFilesStart %}
-          <!-- Add title and container if at least one image exists -->
             {% if has_title == nil %}
+            <!-- Add title and container if at least one image exists -->
             {% include title.html title="Screenshots" %}
-            <div style="text-align: center;">
+            <div class="project-screenshot-container">
             {% assign has_title = true %}
             {% endif %}
             
+            <!-- Retreive the description from the file name -->
+            {% assign description = file.basename | remove: projectFilesStart | replace: '-', ' ' %}
+
             <div class="project-screenshot"
             onclick="this.classList.toggle('project-screenshot');
             this.classList.toggle('project-screenshot-placeholder');
-            this.children[0].classList.toggle('project-screenshot-fullscreen');">
-                {% if file.extname contains "mp4" %}
-                <video src="{{ file.path }}" autoplay loop preload="metadata" muted/>
-                {% else %}
-                <img src="{{ file.path }}" />
-                {% endif %}
+            this.children[0].classList.toggle('project-screenshot-fullscreen');
+            this.children[1].classList.toggle('project-screenshot-description');
+            this.children[1].classList.toggle('project-screenshot-description-open');">
+
+              <!-- Show image or video depending on the file extention -->
+              {% if file.extname contains "mp4" %}
+              <video src="{{ file.path }}" autoplay loop preload="metadata" muted alt="{{ description }}" ></video>
+              {% else %}
+              <img src="{{ file.path }}" alt="{{ description }}" >
+              {% endif %}
+
+              <!-- Screenshot description -->
+              <div class="project-screenshot-description">{{ description }}</div>
+
             </div>
           {% endif %}
       {% endfor %}
