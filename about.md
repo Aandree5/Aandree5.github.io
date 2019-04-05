@@ -14,6 +14,7 @@ I’ve decide to come to England to take my BSc in Computer Science at Coventry 
             {% include logo-name.html logo="Java" %}
             {% include logo-name.html logo="C#" %}
             {% include logo-name.html logo="Python" %}
+            {% include logo-name.html logo="SQL" %}
         </div>
         <p>Laguanges I write</p>
     </div>
@@ -24,7 +25,6 @@ I’ve decide to come to England to take my BSc in Computer Science at Coventry 
             {% include logo-name.html logo="Godot" %}
             {% include logo-name.html logo="Android Studio" %}
             {% include logo-name.html logo="Photoshop" %}
-            {% include logo-name.html logo="SQL" %}
         </div>
         <p>Tools I work with</p>
     </div>
