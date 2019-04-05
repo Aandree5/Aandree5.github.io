@@ -1,7 +1,7 @@
 ---
 title: Android App
 githubLink: https://github.com/Aandree5/AndroidApp
-categories: ["Java", "Android Studio", "GitHub"]
+categories: ["Java", "Android Studio", "GitHub", "SQL"]
 organization: "Coventry Univeristy"
 ---
 
