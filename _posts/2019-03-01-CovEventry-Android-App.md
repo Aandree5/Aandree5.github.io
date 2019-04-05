@@ -6,7 +6,7 @@ organization: "Coventry Univeristy"
 ---
 
 
-An Android app built to show all events around the user in one place. Is able to check the app own database for special events created in it but also scans tweets around the user relating to events and show them on a map for the user to see.
+An Android app built to show all events around the user in one place. Is able to check the app own database for special events created in it but also scan tweets around the user relating to events.
 
 
 {% include title.html title="Login" %}
